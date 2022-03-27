@@ -103,11 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D305CEA027EF1784006BCEBA /* Build configuration list for PBXNativeTarget "mobile-up-gallery" */;
 			buildPhases = (
-				D305CEA827F062C6006BCEBA /* SwiftLint */,
 				A760DD4930250AE78C572B42 /* [CP] Check Pods Manifest.lock */,
+				D305CEA827F062C6006BCEBA /* SwiftLint */,
 				D305CE8827EF1781006BCEBA /* Sources */,
 				D305CE8927EF1781006BCEBA /* Frameworks */,
 				D305CE8A27EF1781006BCEBA /* Resources */,
+				2F176D15BE813ECE56E5A855 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +165,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F176D15BE813ECE56E5A855 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mobile-up-gallery/Pods-mobile-up-gallery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mobile-up-gallery/Pods-mobile-up-gallery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mobile-up-gallery/Pods-mobile-up-gallery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A760DD4930250AE78C572B42 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

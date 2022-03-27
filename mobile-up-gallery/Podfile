@@ -7,4 +7,5 @@ target 'mobile-up-gallery' do
 
   # Pods for mobile-up-gallery
   pod 'SwiftLint'
+  pod 'SnapKit'
 end
