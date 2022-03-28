@@ -14,6 +14,7 @@
 		D305CEA727F058B1006BCEBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D305CEA627F058B1006BCEBA /* LaunchScreen.storyboard */; };
 		D3A65CFB27F1BD1100C6E9FC /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65CFA27F1BD1000C6E9FC /* GeneralConstants.swift */; };
 		D3A65D0027F1BDF700C6E9FC /* BottonLabelLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A65D0227F1BDF700C6E9FC /* BottonLabelLocalizable.strings */; };
+		D3A65D0527F1C1AD00C6E9FC /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */; };
 		F3F43D7AAC8D852749F37DED /* Pods_mobile_up_gallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AF1F36EDDBAC68CDC73E61 /* Pods_mobile_up_gallery.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		D3A65CFA27F1BD1000C6E9FC /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		D3A65D0127F1BDF700C6E9FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BottonLabelLocalizable.strings; sourceTree = "<group>"; };
 		D3A65D0327F1BDF800C6E9FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BottonLabelLocalizable.strings; sourceTree = "<group>"; };
+		D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				D305CE8F27EF1781006BCEBA /* AppDelegate.swift */,
-				D3A65CF527F1B9C900C6E9FC /* Resources */,
 				D305CE9127EF1781006BCEBA /* SceneDelegate.swift */,
+				D3A65CF527F1B9C900C6E9FC /* Resources */,
 				D305CEA327EF1A2C006BCEBA /* UI */,
 				D305CE9827EF1784006BCEBA /* Assets.xcassets */,
 				D305CE9D27EF1784006BCEBA /* Info.plist */,
@@ -89,6 +91,7 @@
 			children = (
 				D305CEA627F058B1006BCEBA /* LaunchScreen.storyboard */,
 				D305CEA427EF1A44006BCEBA /* MainUINavigationController.swift */,
+				D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				D3A65CFB27F1BD1100C6E9FC /* GeneralConstants.swift in Sources */,
 				D305CEA527EF1A44006BCEBA /* MainUINavigationController.swift in Sources */,
 				D305CE9027EF1781006BCEBA /* AppDelegate.swift in Sources */,
+				D3A65D0527F1C1AD00C6E9FC /* BaseViewProtocol.swift in Sources */,
 				D305CE9227EF1781006BCEBA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
