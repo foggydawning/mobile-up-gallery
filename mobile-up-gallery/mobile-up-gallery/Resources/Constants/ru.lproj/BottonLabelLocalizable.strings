@@ -1,0 +1,10 @@
+/* 
+  BottonLabelLocalizable.strings
+  mobile-up-gallery
+
+  Created by Илья Чуб on 28.03.2022.
+  
+*/
+
+"loginViaVK" = "Вход через VK";
+"logout" = "Выход";
