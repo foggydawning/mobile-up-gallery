@@ -15,6 +15,7 @@
 		D3A65CFB27F1BD1100C6E9FC /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65CFA27F1BD1000C6E9FC /* GeneralConstants.swift */; };
 		D3A65D0027F1BDF700C6E9FC /* BottonLabelLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A65D0227F1BDF700C6E9FC /* BottonLabelLocalizable.strings */; };
 		D3A65D0527F1C1AD00C6E9FC /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */; };
+		D3A65D0727F1C2A900C6E9FC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65D0627F1C2A900C6E9FC /* LoginView.swift */; };
 		F3F43D7AAC8D852749F37DED /* Pods_mobile_up_gallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AF1F36EDDBAC68CDC73E61 /* Pods_mobile_up_gallery.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		D3A65D0127F1BDF700C6E9FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BottonLabelLocalizable.strings; sourceTree = "<group>"; };
 		D3A65D0327F1BDF800C6E9FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BottonLabelLocalizable.strings; sourceTree = "<group>"; };
 		D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
+		D3A65D0627F1C2A900C6E9FC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,8 @@
 			children = (
 				D305CEA627F058B1006BCEBA /* LaunchScreen.storyboard */,
 				D305CEA427EF1A44006BCEBA /* MainUINavigationController.swift */,
-				D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */,
+				D3A65D0927F1C2D000C6E9FC /* Protocol */,
+				D3A65D0827F1C2C600C6E9FC /* View */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 		D3A65CF627F1BA1600C6E9FC /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				D3A65D0227F1BDF700C6E9FC /* BottonLabelLocalizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -116,9 +120,24 @@
 			isa = PBXGroup;
 			children = (
 				D3A65CFA27F1BD1000C6E9FC /* GeneralConstants.swift */,
-				D3A65D0227F1BDF700C6E9FC /* BottonLabelLocalizable.strings */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		D3A65D0827F1C2C600C6E9FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3A65D0627F1C2A900C6E9FC /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3A65D0927F1C2D000C6E9FC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		E524DE1C7F2025F64C93C354 /* Pods */ = {
@@ -265,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A65D0727F1C2A900C6E9FC /* LoginView.swift in Sources */,
 				D3A65CFB27F1BD1100C6E9FC /* GeneralConstants.swift in Sources */,
 				D305CEA527EF1A44006BCEBA /* MainUINavigationController.swift in Sources */,
 				D305CE9027EF1781006BCEBA /* AppDelegate.swift in Sources */,
