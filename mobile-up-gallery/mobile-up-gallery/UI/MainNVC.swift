@@ -1,5 +1,5 @@
 //
-//  MainUINavigationController.swift
+//  MainNVC.swift
 //  mobile-up-gallery
 //
 //  Created by Илья Чуб on 26.03.2022.

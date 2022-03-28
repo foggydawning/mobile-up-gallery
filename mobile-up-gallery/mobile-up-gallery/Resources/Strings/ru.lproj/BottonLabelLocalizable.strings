@@ -6,5 +6,5 @@
   
 */
 
-"loginViaVK" = "Вход через VK";
+"loginWithVK" = "Вход через VK";
 "logout" = "Выход";
