@@ -109,6 +109,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		D31940DE27F2E038007631AB /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				D31940DC27F2DD52007631AB /* BaseLabelView.swift */,
+				D31940D827F2D9A7007631AB /* BaseButtonView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		D3A65CF527F1B9C900C6E9FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A65D0627F1C2A900C6E9FC /* LoginView.swift */,
-				D31940DC27F2DD52007631AB /* BaseLabelView.swift */,
-				D31940D827F2D9A7007631AB /* BaseButtonView.swift */,
+				D31940DE27F2E038007631AB /* BaseView */,
 			);
 			path = View;
 			sourceTree = "<group>";
