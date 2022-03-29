@@ -11,6 +11,9 @@
 		D305CE9227EF1781006BCEBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305CE9127EF1781006BCEBA /* SceneDelegate.swift */; };
 		D305CE9927EF1784006BCEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D305CE9827EF1784006BCEBA /* Assets.xcassets */; };
 		D305CEA727F058B1006BCEBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D305CEA627F058B1006BCEBA /* LaunchScreen.storyboard */; };
+		D31940D927F2D9A7007631AB /* BaseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31940D827F2D9A7007631AB /* BaseButtonView.swift */; };
+		D31940DB27F2DB9A007631AB /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31940DA27F2DB9A007631AB /* AppColors.swift */; };
+		D31940DD27F2DD52007631AB /* BaseLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31940DC27F2DD52007631AB /* BaseLabelView.swift */; };
 		D3A65CFB27F1BD1100C6E9FC /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65CFA27F1BD1000C6E9FC /* GeneralConstants.swift */; };
 		D3A65D0027F1BDF700C6E9FC /* BottonLabelLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A65D0227F1BDF700C6E9FC /* BottonLabelLocalizable.strings */; };
 		D3A65D0527F1C1AD00C6E9FC /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A65D0427F1C1AD00C6E9FC /* BaseViewProtocol.swift */; };
@@ -30,6 +33,9 @@
 		D305CE9827EF1784006BCEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D305CE9D27EF1784006BCEBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D305CEA627F058B1006BCEBA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D31940D827F2D9A7007631AB /* BaseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonView.swift; sourceTree = "<group>"; };
+		D31940DA27F2DB9A007631AB /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		D31940DC27F2DD52007631AB /* BaseLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabelView.swift; sourceTree = "<group>"; };
 		D3A65CFA27F1BD1000C6E9FC /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		D3A65D0127F1BDF700C6E9FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BottonLabelLocalizable.strings; sourceTree = "<group>"; };
 		D3A65D0327F1BDF800C6E9FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BottonLabelLocalizable.strings; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D305CEA627F058B1006BCEBA /* LaunchScreen.storyboard */,
+				D31940DA27F2DB9A007631AB /* AppColors.swift */,
 				D3A65D0A27F209CB00C6E9FC /* MainNVC.swift */,
 				D3A65D0C27F20A2200C6E9FC /* LoginVC.swift */,
 				D3A65D0927F1C2D000C6E9FC /* Protocol */,
@@ -131,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				D3A65D0627F1C2A900C6E9FC /* LoginView.swift */,
+				D31940DC27F2DD52007631AB /* BaseLabelView.swift */,
+				D31940D827F2D9A7007631AB /* BaseButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,13 +296,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31940DB27F2DB9A007631AB /* AppColors.swift in Sources */,
 				D3A65D0B27F209CB00C6E9FC /* MainNVC.swift in Sources */,
+				D31940D927F2D9A7007631AB /* BaseButtonView.swift in Sources */,
 				D3A65D0727F1C2A900C6E9FC /* LoginView.swift in Sources */,
 				D3A65D0D27F20A2200C6E9FC /* LoginVC.swift in Sources */,
 				D3A65CFB27F1BD1100C6E9FC /* GeneralConstants.swift in Sources */,
 				D305CE9027EF1781006BCEBA /* AppDelegate.swift in Sources */,
 				D3A65D0527F1C1AD00C6E9FC /* BaseViewProtocol.swift in Sources */,
 				D305CE9227EF1781006BCEBA /* SceneDelegate.swift in Sources */,
+				D31940DD27F2DD52007631AB /* BaseLabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

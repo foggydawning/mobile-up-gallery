@@ -19,30 +19,22 @@ class LoginView: UIView, BaseViewProtocol {
     }
 
     private lazy var label: UILabel = {
-        let label = UILabel()
+        let label = BaseLabelView()
         label.text = GeneralConstants.Text.appName
         label.font = .systemFont(ofSize: 48, weight: .bold)
-        label.numberOfLines = 0
-        label.lineBreakStrategy = []
         return label
     }()
 
     private lazy var button: UIButton = {
-        let button = UIButton()
         let title: String = Bundle.main.localizedString(forKey: "loginWithVK",
                                                         value: "Login with VK",
                                                         table: "BottonLabelLocalizable")
-
-        button.backgroundColor = .black
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.layer.cornerRadius = 8
-
+        let button = BaseButtonView(title: title)
         return button
     }()
 
     func setupAppearance() {
-        backgroundColor = .white
+        backgroundColor = .background
     }
 
     func setupSubviews() {
@@ -53,6 +45,7 @@ class LoginView: UIView, BaseViewProtocol {
     func setupConstraints() {
         let leadingTrailingInset: CGFloat = 24
         let topInset: CGFloat = 164
+        let bottomInset: CGFloat = 50
 
         label.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(leadingTrailingInset)
@@ -61,7 +54,7 @@ class LoginView: UIView, BaseViewProtocol {
 
         button.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(leadingTrailingInset)
-            make.bottom.equalToSuperview().inset(50)
+            make.bottom.equalToSuperview().inset(bottomInset)
             make.height.equalTo(56)
         }
     }
