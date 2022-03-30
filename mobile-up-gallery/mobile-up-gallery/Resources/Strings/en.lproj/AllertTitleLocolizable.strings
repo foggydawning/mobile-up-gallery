@@ -1,0 +1,12 @@
+/* 
+  AllertTitleLocolizable.strings
+  mobile-up-gallery
+
+  Created by Илья Чуб on 30.03.2022.
+  
+*/
+
+"appError" = "Hmmm...";
+"serverError" = "Server Error";
+"unknownError" = "Unknown Error";
+"closingAuthenticationWindow" = "Closing the authentication window";

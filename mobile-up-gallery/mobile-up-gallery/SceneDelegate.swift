@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
     }
-    
+
     private func makeMainViewController() -> UIViewController {
         let loginVC = LoginVC()
         let mainUINavigationController = MainUINavigationController(rootViewController: loginVC)

@@ -7,23 +7,20 @@
 
 import UIKit
 
-class BaseLabelView: UILabel, BaseViewProtocol {
+class BaseLabelView: UILabel {
 
     init() {
         super.init(frame: .zero)
-        setup()
+        setupAppearance()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupAppearance() {
+    private func setupAppearance() {
         numberOfLines = 0
         lineBreakStrategy = []
         textColor = .main
     }
-
-    func setupSubviews() {}
-    func setupConstraints() {}
 }

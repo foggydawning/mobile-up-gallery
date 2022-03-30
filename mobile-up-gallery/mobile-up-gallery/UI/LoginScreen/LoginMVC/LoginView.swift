@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-class LoginView: UIView, BaseViewProtocol {
+// MARK: - LoginView
+class LoginView: UIView {
+    // MARK: Initializers
     init() {
         super.init(frame: .zero)
         setup()
@@ -18,6 +20,7 @@ class LoginView: UIView, BaseViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Subviews
     private lazy var label: UILabel = {
         let label = BaseLabelView()
         label.text = GeneralConstants.Text.appName
@@ -29,20 +32,38 @@ class LoginView: UIView, BaseViewProtocol {
         let title: String = Bundle.main.localizedString(forKey: "loginWithVK",
                                                         value: "Login with VK",
                                                         table: "BottonLabelLocalizable")
-        let button = BaseButtonView(title: title)
+        let button = UIButton(type: .system)
+
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+
+        button.backgroundColor = .main
+        button.setTitleColor(.background, for: .normal)
+        button.layer.cornerRadius = 8
+
         return button
     }()
+}
 
-    func setupAppearance() {
+// MARK: Private setup methods
+extension LoginView {
+
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupAppearance() {
         backgroundColor = .background
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addSubview(label)
         addSubview(button)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         let leadingTrailingInset: CGFloat = 24
         let topInset: CGFloat = 164
         let bottomInset: CGFloat = 50
@@ -57,5 +78,12 @@ class LoginView: UIView, BaseViewProtocol {
             make.bottom.equalToSuperview().inset(bottomInset)
             make.height.equalTo(56)
         }
+    }
+}
+
+// MARK: - Public methods for for interacting with the VC
+extension LoginView {
+    func setupButtonAction(responder: UIResponder, action: Selector) {
+        button.addTarget(responder, action: action, for: .touchUpInside)
     }
 }

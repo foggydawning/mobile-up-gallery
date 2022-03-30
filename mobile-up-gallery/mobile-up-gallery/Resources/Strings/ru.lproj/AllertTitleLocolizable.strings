@@ -1,0 +1,12 @@
+/* 
+  AllertTitle.strings
+  mobile-up-gallery
+
+  Created by Илья Чуб on 30.03.2022.
+  
+*/
+
+"appError" = "Хммм...";
+"serverError" = "Ошибка сервера";
+"unknownError" = "Неопознанная ошибка";
+"closingAuthenticationWindow" = "Закрытие окна аутентификации";

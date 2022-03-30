@@ -1,0 +1,12 @@
+/* 
+  AllertMessageLocolizable.strings
+  mobile-up-gallery
+
+  Created by Илья Чуб on 30.03.2022.
+  
+*/
+
+"appError" = "Похоже, что это ошибка приложения";
+"serverError" = "Выглядит как ошибка сервера";
+"unknownError" = "Попробуйте перезапустить приложение";
+"closingAuthenticationWindow" = "Вы закрыли окно аутентификации перед тем, как процесс завершился";

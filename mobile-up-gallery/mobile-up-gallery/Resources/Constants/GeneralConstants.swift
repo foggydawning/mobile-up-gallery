@@ -8,6 +8,5 @@
 struct GeneralConstants {
     enum Text {
         static let appName = "Mobile Up Gallery"
-        static let VKAppID = "8119428"
     }
 }

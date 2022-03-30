@@ -1,0 +1,12 @@
+/* 
+  AllertMessageLocalizable.strings
+  mobile-up-gallery
+
+  Created by Илья Чуб on 30.03.2022.
+  
+*/
+
+"appError" = "Most likely, this is an application error";
+"serverError" = "It's look like server error";
+"unknownError" = "Try restarting the app";
+"closingAuthenticationWindow" = "You closed the authentication window before the process ended";
