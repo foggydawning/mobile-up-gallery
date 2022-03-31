@@ -31,7 +31,7 @@ class LoginView: UIView {
     private lazy var button: UIButton = {
         let title: String = Bundle.main.localizedString(forKey: "loginWithVK",
                                                         value: "Login with VK",
-                                                        table: "BottonLabelLocalizable")
+                                                        table: "ButtonLabelLocalizable")
         let button = UIButton(type: .system)
 
         button.setTitle(title, for: .normal)

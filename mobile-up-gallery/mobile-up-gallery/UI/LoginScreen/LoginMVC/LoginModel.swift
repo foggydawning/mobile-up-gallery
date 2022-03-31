@@ -15,7 +15,8 @@ final class LoginModel {
     private var urlForCheckToken: URL?
 
     private var token: String? { didSet {
-        if token != nil { checkToken() }}
+        if token != nil { checkToken()
+        } else { UserSettings.token = nil} }
     }
     private var tokenIsActive: Bool? { didSet {
         if tokenIsActive == true { openMainScreen() }}
@@ -111,7 +112,9 @@ extension LoginModel {
 // MARK: - Private methods for interacting with UIVavigationController
 extension LoginModel {
     private func openMainScreen() {
-        print("Открылся главный экран")
+        let mainVC = MainVC()
+        mainVC.setLogoutDelegate(self)
+        controller?.navigationController?.pushViewController(mainVC, animated: true)
     }
 }
 
@@ -122,5 +125,12 @@ extension LoginModel {
         let authVC = AuthVC(delegate: self)
         controller.present(authVC, animated: true, completion: nil)
         return
+    }
+}
+
+// MARK: - LogoutDelegate Methods
+extension LoginModel: LogoutDelegate {
+    func logout() {
+        token = nil
     }
 }

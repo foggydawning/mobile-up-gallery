@@ -43,6 +43,7 @@ extension AuthModel {
     }
 
     private func dismissController() {
+        controller?.clearWebView()
         controller?.dismiss(animated: true, completion: nil)
     }
 }
