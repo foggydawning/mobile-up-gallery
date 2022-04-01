@@ -21,7 +21,7 @@ final class MainVC: UICollectionViewController {
     init() {
         let layout = MainVC.getLayout()
         super.init(collectionViewLayout: layout)
-        model.fetchPhotos()
+        model.setPhotosInfo()
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -102,14 +102,14 @@ extension MainVC {
 extension MainVC {
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return model.photos.count
+        return model.photosInfo.count
     }
 
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let index = indexPath.item
-        let url = model.photos[index].url
+        let url = model.photosInfo[index].url
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MainCellView.reuseID,
             for: indexPath)

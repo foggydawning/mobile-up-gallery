@@ -5,7 +5,7 @@
 //  Created by Илья Чуб on 31.03.2022.
 //
 
-import Alamofire
+import Foundation
 
 // MARK: - MainModel
 final class MainModel {
@@ -13,7 +13,7 @@ final class MainModel {
     // MARK: - Properties
     private weak var controller: MainVC?
     private weak var logoutDelegate: LogoutDelegate?
-    private (set) var photos: [Photo] = []
+    private (set) var photosInfo: [Photo] = []
 }
 
 // MARK: - Public setup methods
@@ -25,37 +25,34 @@ extension MainModel {
 
 // MARK: - Public and private methods for the working with the network
 extension MainModel {
-    func fetchPhotos() {
-        guard let token = UserSettings.token else { return }
-
-        AF.request("https://api.vk.com/method/photos.get",
-                   method: .get,
-                   parameters: ["owner_id": "-128666765",
-                                "album_id": "266276915",
-                                "photo_sizes": "0",
-                                "access_token": token,
-                                "v": "5.131"],
-                   encoding: URLEncoding.default)
-        .validate()
-        .responseDecodable(of: PhotosGetResponseStruct.self) { response in
-            guard let photosGetResponseStruct = response.value else { return }
-            let photosGetResponseStructResponse = photosGetResponseStruct.response
-            self.setPhotos(photosGetResponseStructResponse: photosGetResponseStructResponse)
+    func setPhotosInfo() {
+        guard let token = UserSettings.token else {
+            controller?.showAlert(title: ErrorType.unknownError.title,
+                                  message: ErrorType.unknownError.message,
+                                  action: {self.logout()})
+            return
         }
-    }
 
-    private func setPhotos(photosGetResponseStructResponse: PhotosGetResponseStructResponse) {
-        for dirtyPhotoData in photosGetResponseStructResponse.items {
-            let datetime = dirtyPhotoData.date
-            guard let url = dirtyPhotoData.sizes.first(where: { $0.type == "x" })?.url else {
-                continue
+        VKAPIManager.fetchPhotosInfo(token: token, completion: { [self] result in
+            switch result {
+            case .success(let response):
+                for dirtyPhotoData in response.items {
+                    let datetime = dirtyPhotoData.date
+                    guard let url = dirtyPhotoData.sizes.first(where: { $0.type == "x" })?.url else {
+                        continue
+                    }
+                    let photo = Photo(datetime: datetime, url: url)
+                    photosInfo.append(photo)
+                }
+                DispatchQueue.main.async {
+                    self.controller?.collectionView?.reloadData()
+                }
+            case .failure(let error):
+                controller?.showAlert(title: error.title,
+                                      message: error.message,
+                                      action: {self.logout()})
             }
-            let photo = Photo(datetime: datetime, url: url)
-            photos.append(photo)
-        }
-        DispatchQueue.main.async {
-            self.controller?.collectionView?.reloadData()
-        }
+        })
     }
 }
 

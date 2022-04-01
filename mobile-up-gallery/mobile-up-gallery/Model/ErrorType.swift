@@ -1,13 +1,13 @@
 //
-//  AuthErrorType.swift
+//  ErrorType.swift
 //  mobile-up-gallery
 //
-//  Created by Илья Чуб on 30.03.2022.
+//  Created by Илья Чуб on 01.04.2022.
 //
 
 import Foundation
 
-enum AuthErrorType: String {
+enum ErrorType: String, Error {
     case appError
     case serverError
     case unknownError
