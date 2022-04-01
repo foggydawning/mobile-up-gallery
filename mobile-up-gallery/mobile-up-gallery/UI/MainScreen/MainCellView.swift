@@ -17,6 +17,7 @@ final class MainCellView: UICollectionViewCell {
     var url: String? {
         didSet {
             guard let url = url else { return }
+            activityIndicator.startAnimating()
             loadImage(url: url)
         }
     }
@@ -39,22 +40,39 @@ final class MainCellView: UICollectionViewCell {
         imageView.clipsToBounds = true
         return imageView
     }()
+
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.style = .medium
+        indicator.tintColor = .main
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
 }
 
 // MARK: - Private setup methods
 extension MainCellView {
     private func setup() {
+        setupAppearence()
         setupSubviews()
         setupConstraints()
     }
 
+    private func setupAppearence() {
+        backgroundColor = .background
+    }
+
     private func setupSubviews() {
         addSubview(imageView)
+        addSubview(activityIndicator)
     }
 
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        activityIndicator.snp.makeConstraints { make in
+            make.centerY.centerX.equalToSuperview()
         }
     }
 }
@@ -79,6 +97,7 @@ extension MainCellView {
             default: break
             }
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.imageView.image = imageToCache
                 imageCache.setObject(imageToCache, forKey: url as NSString)
             }
