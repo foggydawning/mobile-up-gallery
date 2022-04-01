@@ -71,8 +71,10 @@ extension AuthModel: WKNavigationDelegate {
         }
     }
 
-    func webView(_: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError: Error) {
-        requestErrorAllertAndDismissController(description: "No connect", type: .noConnection)
+    func webView(_: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError error: Error) {
+        if error._code == NSURLErrorNotConnectedToInternet {
+            requestErrorAllertAndDismissController(description: "No connect", type: .noConnection)
+        }
     }
 }
 
