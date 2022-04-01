@@ -70,6 +70,10 @@ extension AuthModel: WKNavigationDelegate {
             })
         }
     }
+
+    func webView(_: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError: Error) {
+        requestErrorAllertAndDismissController(description: "No connect", type: .noConnection)
+    }
 }
 
 // MARK: - Private error methods

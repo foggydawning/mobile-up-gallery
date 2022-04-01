@@ -11,3 +11,4 @@
 "unknownError" = "Неопознанная ошибка";
 "closingAuthenticationWindow" = "Закрытие окна аутентификации";
 "imageSaved" = "Успешно";
+"noConnection" = "Нет соединения";

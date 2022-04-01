@@ -11,3 +11,4 @@
 "unknownError" = "Try restarting the app";
 "closingAuthenticationWindow" = "You closed the authentication window before the process ended";
 "imageSaved" = "Image saved!";
+"noConnection" = "No internet connection or connection to VK service";

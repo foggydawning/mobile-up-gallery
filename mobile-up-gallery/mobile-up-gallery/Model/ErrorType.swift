@@ -8,6 +8,7 @@
 import Foundation
 
 enum ErrorType: String, Error {
+    case noConnection
     case appError
     case serverError
     case unknownError
@@ -27,6 +28,8 @@ enum ErrorType: String, Error {
 
     var titleDefaultValue: String {
         switch self {
+        case .noConnection:
+            return "No connection"
         case .appError:
             return "Hmmm."
         case .serverError:
@@ -40,6 +43,8 @@ enum ErrorType: String, Error {
 
     var messageDefaultValue: String {
         switch self {
+        case .noConnection:
+            return "No internet connection or connection to VK service"
         case .appError:
             return "Most likely, this is an application error"
         case .serverError:
