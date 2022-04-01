@@ -16,8 +16,8 @@ final class MainCellView: UICollectionViewCell {
     // MARK: Properties
     var url: String? {
         didSet {
-            imageView.image = nil
-            loadImage()
+            guard let url = url else { return }
+            loadImage(url: url)
         }
     }
     static let reuseID = String(describing: MainCellView.self)
@@ -44,12 +44,9 @@ final class MainCellView: UICollectionViewCell {
 // MARK: - Private setup methods
 extension MainCellView {
     private func setup() {
-        setupAppearence()
         setupSubviews()
         setupConstraints()
     }
-
-    private func setupAppearence() {}
 
     private func setupSubviews() {
         addSubview(imageView)
@@ -62,27 +59,29 @@ extension MainCellView {
     }
 }
 
+// MARK: - Download image method
 extension MainCellView {
-    func loadImage() {
+    func loadImage(url: String) {
         self.imageView.image = nil
-
-        guard let url = url else { return }
 
         if let imageFromCache = imageCache.object(forKey: url as NSString) {
             self.imageView.image = imageFromCache
             return
         }
 
-        AF.download(self.url ?? "")
-            .validate()
-            .responseData { response in
-                if let data = response.value {
-                    DispatchQueue.main.async {
-                        guard let imageToCache = UIImage(data: data) else { return }
-                        self.imageView.image = imageToCache
-                        imageCache.setObject(imageToCache, forKey: url as NSString)
-                    }
-                }
+        Loader.loadData(url: self.url ?? "", completion: { result in
+            var imageToCache = UIImage()
+
+            switch result {
+            case .success(let data):
+                guard let imageFromData = UIImage(data: data) else { return }
+                imageToCache =  imageFromData
+            default: break
             }
+            DispatchQueue.main.async {
+                self.imageView.image = imageToCache
+                imageCache.setObject(imageToCache, forKey: url as NSString)
+            }
+        })
     }
 }

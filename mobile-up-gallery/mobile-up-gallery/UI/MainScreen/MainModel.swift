@@ -38,7 +38,7 @@ extension MainModel {
             case .success(let response):
                 for dirtyPhotoData in response.items {
                     let datetime = dirtyPhotoData.date
-                    guard let url = dirtyPhotoData.sizes.first(where: { $0.type == "x" })?.url else {
+                    guard let url = dirtyPhotoData.sizes.first(where: { $0.type == "z" })?.url else {
                         continue
                     }
                     let photo = Photo(datetime: datetime, url: url)

@@ -41,10 +41,7 @@ final class MainVC: UICollectionViewController {
     }()
 
     private lazy var titleLabel: UILabel = {
-        let label = BaseLabelView()
-        label.text = GeneralConstants.Text.appName
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
-        return label
+        NavigationBarTitleLabelView(text: GeneralConstants.Text.appName)
     }()
 }
 
@@ -70,6 +67,7 @@ extension MainVC {
     }
 
     private func setupCollectionView() {
+        collectionView.backgroundColor = .background
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register( MainCellView.self,
@@ -116,5 +114,13 @@ extension MainVC {
         guard let cell = cell as? MainCellView else { return cell }
         cell.url = url
         return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.item
+        let photoInfo = model.photosInfo[index]
+        let detailVC = DetailVC(photoInfo: photoInfo)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

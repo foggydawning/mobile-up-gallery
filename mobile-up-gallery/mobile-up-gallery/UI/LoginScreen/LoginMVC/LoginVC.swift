@@ -42,6 +42,7 @@ extension LoginVC {
 // MARK: - Private setup methods
 extension LoginVC {
     private func setup() {
+        navigationController?.hidesBarsWhenVerticallyCompact = true
         addSubviews()
         setupConstraint()
     }

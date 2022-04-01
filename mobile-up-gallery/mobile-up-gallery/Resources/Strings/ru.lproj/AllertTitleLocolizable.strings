@@ -10,3 +10,4 @@
 "serverError" = "Ошибка сервера";
 "unknownError" = "Неопознанная ошибка";
 "closingAuthenticationWindow" = "Закрытие окна аутентификации";
+"imageSaved" = "Успешно";
